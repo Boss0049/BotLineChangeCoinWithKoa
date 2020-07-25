@@ -2,7 +2,7 @@ const axios = require("axios");
 
 const changeCoins = async (req, res) => {
   const messageCoins = await axios.get(
-    "http://data.fixer.io/api/latest?access_key= <input_key_token_fixer>"
+    "http://data.fixer.io/api/latest?access_key=bba950d832d01f83dce4f6edcfc420d7"
   );
   return messageCoins.data;
 };
@@ -22,7 +22,8 @@ const MainChangeCoins = async (ctx) => {
 
   let headers = {
     "Content-Type": "application/json",
-    Authorization: "Bearer <input_token_line>",
+    Authorization:
+      "Bearer O4YUGVsfHP76flyUxc/Ftd6Sxnl4bUa3LJr9IFB3GbQdzXCaHOax7XJ6cH0dXhoq/mPun1OUu1ENZIfX41rmRIix8rfy97tbXCmRIxYAv+C2rp7YtEpxdxOO0cNnavGtc1azpcAEJGzEz/JE3pnwJwdB04t89/1O/w1cDnyilFU=",
   };
 
   let data = {
