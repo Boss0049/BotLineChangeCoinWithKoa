@@ -9,9 +9,12 @@ const changeCoins = async (req, res) => {
 
 const MainChangeCoins = async (ctx) => {
   const message = await changeCoins();
+  const replyLine = ctx.request.body.events[0].message.text.includes("USD")
+    ? parseInt(ctx.request.body.events[0].message.text)
+    : ctx.request.body.events[0].message.text;
 
   let THB = Math.ceil(
-    `${message.rates.THB * ctx.request.body.events[0].message.text}`
+    `${message.rates.THB * Number(replyLine)}`
   );
 
   if (isNaN(THB)) {
